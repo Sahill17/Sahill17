@@ -5,7 +5,7 @@
 
 - 🔭 I’m currently working on, <!-- [AnimeList](https://github.com/SahilRathod17/AnimeList )--> i'll show you when it's done
 
-- 🌱 I’m currently learning **more about flutter.**
+- 🌱 I’m currently learning **more about [Flutter](https://flutter.dev/?gclid=Cj0KCQiA1ZGcBhCoARIsAGQ0kkof9BSdvrb5CuuxwHVLHk3k5ghbPkWjOe6EoksdunZtbQ7rN7EDne8aArjzEALw_wcB&gclsrc=aw.ds).**
 
 - 💬 Ask me about **app development.**
 
