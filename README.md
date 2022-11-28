@@ -7,11 +7,11 @@
 
 - 🌱 I’m currently learning **more about [Flutter](https://flutter.dev/?gclid=Cj0KCQiA1ZGcBhCoARIsAGQ0kkof9BSdvrb5CuuxwHVLHk3k5ghbPkWjOe6EoksdunZtbQ7rN7EDne8aArjzEALw_wcB&gclsrc=aw.ds).**
 
-- 💬 Ask me about **app development.**
+- 💬 Ask me about **App Development.**
 
 - 📫 How to reach me **samael17111@gmail.com**
 
-- ⚡ Fun fact **I'm a weeb.**
+- ⚡ Fun fact **I'm a Weeb.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
