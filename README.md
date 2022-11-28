@@ -3,7 +3,7 @@
 
 - ☕ Life is too short to be coding in Java, **but i do**
 
-- 🔭 I’m currently working on [AnimeList](https://github.com/SahilRathod17/AnimeList)
+- 🔭 I’m currently working on, <!-- [AnimeList](https://github.com/SahilRathod17/AnimeList )--> i'll show you when it's done
 
 - 🌱 I’m currently learning **more about flutter.**
 
