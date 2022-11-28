@@ -1,6 +1,8 @@
 <h1 align="center">Hola 👋, I'm Sahil Rathod.</h1>
 <h3 align="center">I'm a Student.</h3>
 
+- Life is too short to be coding in Java , but i do
+
 - 🔭 I’m currently working on [AnimeList](https://github.com/SahilRathod17/AnimeList)
 
 - 🌱 I’m currently learning **more about flutter.**
