@@ -3,17 +3,17 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sahilrathod17&label=Profile%20views&color=0e75b6&style=flat" alt="sahilrathod17" /> </p>
 
-- 🔭 I’m currently working as **Flutter Developer**
+- 🔭 I’m currently working as **Flutter Developer**.
 
-- 🌱 I’m currently learning **more about Tech.**
+- 🌱 I’m currently learning **more about Tech**.
 
-- 👯 I’m looking to collaborate on **Open Source Projects.**
+- 👯 I’m looking to collaborate on **Open Source Projects**.
 
-- 💬 Ask me about **App Development / Anime Recommendation**
+- 💬 Ask me about **App Development || Anime Recommendation**.
 
-- 📫 How to reach me **samael17111@gmail.com**
+- 📫 How to reach me **samael17111@gmail.com**.
 
-- ⚡ Fun fact **I'm a weeb.**
+- ⚡ Fun fact **I'm a weeb**.
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
