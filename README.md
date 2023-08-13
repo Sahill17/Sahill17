@@ -11,7 +11,7 @@
 
 - 💬 Ask me about **App Development || Anime Recommendation**.
 
-- 📫 How to reach me **samael17111@gmail.com**.
+- 📫 How to reach me **sahil20030517@gmail.com**.
 
 - ⚡ Fun fact **I'm a weeb**.
 
