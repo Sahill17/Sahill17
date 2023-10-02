@@ -4,7 +4,7 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sahilrathod17&label=Profile%20views&color=0e75b6&style=flat" alt="sahilrathod17" /> </p>
 
 <!-- - 🔭 I’m currently working as **Flutter Developer**. -->
-
+###
 - 🌱 I’m currently learning about **Cloud & DevOps**.
 
 - 👯 I’m looking to collaborate on **Open Source Projects**.
@@ -15,9 +15,11 @@
 - 📫 How to reach me **24sahilrathod@gmail.com**.
 
 - ⚡ Fun fact **I'm a weeb**.
-
-
-
+###
+<!-- <br>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api?username=SahilRathod17&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"/></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=SahilRathod17&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="135" alt="languages graph"/></p>
+<br> -->
 <h3 align="left">Connect with me:</h3>
 <p align="left">
   
@@ -29,6 +31,9 @@
 <!-- <a href="https://www.leetcode.com/sahilrathod" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="sahilrathod" height="30" width="40" /></a>  -->
 </p>
 </p>
+
+<img src="https://raw.githubusercontent.com/SahilRathod17/SahilRathod17/output/snake.svg" alt="Snake animation" />
+
 
 
 
