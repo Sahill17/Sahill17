@@ -10,7 +10,7 @@
 - 👯 I’m looking to collaborate on **Open Source Projects**.
 
 <!-- - 💬 Ask me about **App Development || Anime Recommendation**. -->
-- 📝 I regularly write articles on [Operations Guy](https://operationsguy.hashnode.dev/)
+- 📝 I regularly write articles on **[Operations Guy](https://operationsguy.hashnode.dev/)**
 
 - 📫 How to reach me **24sahilrathod@gmail.com**.
 
