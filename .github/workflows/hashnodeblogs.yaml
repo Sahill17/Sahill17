@@ -10,11 +10,11 @@ jobs:
     name: "Update With Latest Blogs"
     runs-on: ubuntu-latest
     steps:
-      - name: "📥  Fetching Repository Contents"
+      - name: "Fetching Repository Contents"
         uses: actions/checkout@main
 
-      - name: "📚  Hashnode Updater"
-        uses: "varunsridharan/action-hashnode-blog@1.1.1"
+      - name: "Hashnode Blogs"
+        uses: "varunsridharan/action-hashnode-blog@main"
         with:
           USERNAME: "Sahil17" # Hashnode Username
           COUNT: 2 # MAX Visisble
