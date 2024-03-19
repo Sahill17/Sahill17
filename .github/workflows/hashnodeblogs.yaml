@@ -13,7 +13,7 @@ jobs:
       - name: "Fetching Repository Contents"
         uses: actions/checkout@main
 
-      - name: "Hashnode Updater"
+      - name: "Hashnode Blogs"
         uses: "varunsridharan/action-hashnode-blog@main"
         with:
           USERNAME: 'Sahil17' # Hashnode Username
