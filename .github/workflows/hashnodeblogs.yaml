@@ -1,25 +1,19 @@
-# name: "Blog Updater"
+name: Hashnode Blogs
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
-# on:
-#   workflow_dispatch:
-#   schedule:
-#     - cron: '0 0 * * *' # Runs Every Day
+jobs:
+  update-readme-with-blog:
+    name: latest blogs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: gautamkrishnar/blog-post-workflow@master
+        with:
+          comment_tag_name: "HASHNODE"
+          commit_message: "Added latest blogs from the RSS"
+          feed_list: "https://operationsguy.hashnode.dev/rss.xml"
 
-# jobs:
-#   update_blogs:
-#     name: "Update Blogs"
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: "Fetching Repository Contents"
-#         uses: actions/checkout@main
-
-#       - name: "Hashnode Blogs"
-#         uses: "varunsridharan/action-hashnode-blog@main"
-#         with:
-#           USERNAME: 'Sahil17' # Hashnode Username
-#           BLOG_URL: 'https://operationsguy.hashnode.dev/' # Blog URL
-#           COUNT: 2 # MAX Visisble
-#           STYLE: "blog-alternate"
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
