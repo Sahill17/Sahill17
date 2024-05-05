@@ -19,6 +19,7 @@
 
 ### Hashnode Blog Post 👇
 <!-- HASHNODE:START -->
+- [functions and loops in golang](https://operationsguy.hashnode.dev/functions-and-loops-in-golang)
 - [Variables in golang](https://operationsguy.hashnode.dev/variables-in-golang)
 - [Saying Hello to the World with Golang](https://operationsguy.hashnode.dev/saying-hello-to-the-world-with-golang)
 - [Why learn Go &lpar;Golang&rpar;?](https://operationsguy.hashnode.dev/why-learn-go)
