@@ -19,6 +19,7 @@
 
 ### Hashnode Blog Post 👇
 <!-- HASHNODE:START -->
+- [Switch and defer statements](https://operationsguy.hashnode.dev/switch-and-defer-statements)
 - [functions and loops in golang](https://operationsguy.hashnode.dev/functions-and-loops-in-golang)
 - [Variables in golang](https://operationsguy.hashnode.dev/variables-in-golang)
 - [Saying Hello to the World with Golang](https://operationsguy.hashnode.dev/saying-hello-to-the-world-with-golang)
