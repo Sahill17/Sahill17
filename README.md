@@ -20,9 +20,3 @@
 - [Why learn Go &lpar;Golang&rpar;?](https://operationsguy.hashnode.dev/why-learn-go)
 <!-- HASHNODE:END -->
 
-<h4 align="left">Connect with me</h4>
-<p align="left">
-<a href="https://www.linkedin.com/in/sahilrathod017/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sahil rathod" height="30" width="40" /></a>
-<a href="https://twitter.com/iamsahil1705" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="iamsahil1705" height="30" width="40" /></a>
-<a href="https://hashnode.com/@Sahil17" target="blank"><img align="center" src="https://github.com/Sahill17/Sahill17/blob/main/svg/hashnode.svg" alt="@sahil17" height="130" width="160" /></a> 
-</p>
