@@ -3,14 +3,6 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sahilrathod17&label=Profile%20views&color=0e75b6&style=flat" alt="sahilrathod17" /> </p>
 
-###
-- I write code.
-
-- I automate things.
-
-- I enjoy learning new stuff.
-###
-
 #### Hashnode Blog Post
 <!-- HASHNODE:START -->
 - [Switch and defer statements](https://operationsguy.hashnode.dev/switch-and-defer-statements)
