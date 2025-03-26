@@ -40,7 +40,7 @@ jobs:
           START="<!-- BlogPosts:START -->"
           END="<!-- BlogPosts:START -->"
 
-          LINKS=$(sed 's/^/- /' urls.txt)
+          LINKS=$(head -n 5 urls.txt | sed -E 's|https://Sahill17.github.io/([^/]+)/?$| - [\1](https://Sahill17.github.io/\1)|')
 
           awk -v start="$START" -v end="$END" -v links="$LINKS" '
           BEGIN { inBlock=0 }
