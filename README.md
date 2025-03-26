@@ -5,5 +5,9 @@
 
 #### Latest Blog Posts
 <!-- BlogPosts:START -->
-<!-- BlogPosts:END -->
-
+- https://Sahill17.github.io/arrays-and-slices/
+- https://Sahill17.github.io/switch-and-defer-statements/
+- https://Sahill17.github.io/functions-and-loops-in-golang/
+- https://Sahill17.github.io/variables-in-golang/
+- https://Sahill17.github.io/saying-hello-to-the-world-with-golang/
+- https://Sahill17.github.io/why-learn-go/
