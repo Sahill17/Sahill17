@@ -1,0 +1,68 @@
+name: Get latest blogs from sitemap
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  get-links:
+    runs-on:  ubuntu-latest
+    steps:
+      # Checking out main repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Download sitemap from the github pages
+      - name: Download sitemap
+        run: |
+          curl -o sitemap.xml https://sahill17.github.io/sitemap.xml
+
+      # Extracting all the blog posts
+      - name: Extract blog posts
+        run: |
+          URLS=$(xmllint --xpath "//*[local-name()='url']/*[local-name()='loc']/text()" sitemap.xml)
+          echo "Extracted URLs:"
+          echo "$URLS"
+
+          echo "$URLS" | tr ' ' '\n' | grep -vE 'https://Sahill17.github.io/(tags|cheatsheet)/|^https://Sahill17.github.io/$' > urls.txt
+          echo "Filtered Blog URLs:"
+          cat urls.txt
+
+      # Updating README.md with blog posts
+      - name: Update README.md file
+        run: |
+          FILE="README.md"
+          START="<!-- BlogPosts:START -->"
+          END="<!-- BlogPosts:START -->"
+
+          LINKS=$(sed 's/^/- /' urls.txt)
+
+          awk -v start="$START" -v end="$END" -v links="$LINKS" '
+          BEGIN { inBlock=0 }
+          {
+            if ($0 ~ start) {
+              print $0
+              print links
+              inBlock=1
+            } else if ($0 ~ end) {
+              inBlock=0
+              print $0
+            } else if (!inBlock) {
+              print $0
+            }
+          }
+          ' "$FILE" > "$FILE.new" && mv "$FILE.new" "$FILE"
+
+      # Commit and push changes
+      - name: Commit and push
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add README.md
+          if git diff-index --quiet HEAD; then
+            echo "No changes detected."
+          else
+            git commit -m "Updated with latest blog posts"
+            git push
+          fi
