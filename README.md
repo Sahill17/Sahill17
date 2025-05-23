@@ -5,8 +5,8 @@
 
 #### Latest Blog Posts
 <!-- BlogPosts:START -->
+ - [maps-in-golang](https://Sahill17.github.io/maps-in-golang)
  - [arrays-and-slices](https://Sahill17.github.io/arrays-and-slices)
  - [switch-and-defer-statements](https://Sahill17.github.io/switch-and-defer-statements)
  - [functions-and-loops-in-golang](https://Sahill17.github.io/functions-and-loops-in-golang)
  - [variables-in-golang](https://Sahill17.github.io/variables-in-golang)
- - [saying-hello-to-the-world-with-golang](https://Sahill17.github.io/saying-hello-to-the-world-with-golang)
