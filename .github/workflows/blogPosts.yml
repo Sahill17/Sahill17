@@ -7,64 +7,54 @@ on:
 
 jobs:
   get-links:
-    runs-on:  ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      # Checking out main repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Install xmllint
       - name: Install xmllint
         run: sudo apt-get update && sudo apt-get install -y libxml2-utils
 
-      # Download sitemap from the github pages
       - name: Download sitemap
         run: |
-          curl -o sitemap.xml https://sahill17.github.io/sitemap.xml
+          curl -s -o sitemap.xml https://sahill17.github.io/sitemap.xml
 
-      # Extracting all the blog posts
       - name: Extract blog posts
         run: |
-          URLS=$(xmllint --xpath "//*[local-name()='url']/*[local-name()='loc']/text()" sitemap.xml)
-          echo "Extracted URLs:"
-          echo "$URLS"
+          # grab every <loc> URL
+          URLS=$(xmllint --xpath "//*[local-name()='loc']/text()" sitemap.xml)
 
-          echo "$URLS" | tr ' ' '\n' | grep -vE 'https://Sahill17.github.io/(tags|cheatsheet)/|^https://Sahill17.github.io/$' > urls.txt
+          # filter to only /post/<slug> (one level under /post/), excluding the /post/ index itself
+          echo "$URLS" | tr ' ' '\n' \
+            | grep -E '^https://sahill17.github.io/post/[^/]+/?$' \
+            > urls.txt
+
           echo "Filtered Blog URLs:"
           cat urls.txt
 
-      # Updating README.md with blog posts
       - name: Update README.md file
         run: |
           FILE="README.md"
           START="<!-- BlogPosts:START -->"
-          END="<!-- BlogPosts:START -->"
+          END="<!-- BlogPosts:END -->"
 
-          LINKS=$(head -n 5 urls.txt | sed -E 's|https://Sahill17.github.io/([^/]+)/?$| - [\1](https://Sahill17.github.io/\1)|')
+          # build markdown links from the first 5 URLs
+          LINKS=$(head -n 5 urls.txt \
+            | sed -E 's|https://sahill17.github.io/post/([^/]+)/?$|- [\1](https://sahill17.github.io/post/\1)|')
 
+          # replace the block between START and END
           awk -v start="$START" -v end="$END" -v links="$LINKS" '
-          BEGIN { inBlock=0 }
-          {
-            if ($0 ~ start) {
-              print $0
-              print links
-              inBlock=1
-            } else if ($0 ~ end) {
-              inBlock=0
-              print $0
-            } else if (!inBlock) {
-              print $0
-            }
-          }
-          ' "$FILE" > "$FILE.new" && mv "$FILE.new" "$FILE"
+            $0 ~ start { print; print links; inBlock=1; next }
+            $0 ~ end   { inBlock=0; print; next }
+            !inBlock   { print }
+          ' "$FILE" > tmp && mv tmp "$FILE"
 
-      # Commit and push changes
       - name: Commit and push
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           git add README.md
-          if git diff-index --quiet HEAD; then
+          if git diff --quiet; then
             echo "No changes detected."
           else
             git commit -m "Updated with latest blog posts"
