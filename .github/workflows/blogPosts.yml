@@ -2,12 +2,13 @@ name: Get latest blogs from sitemap
 
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * * 0' 
   workflow_dispatch:
 
 jobs:
   get-links:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -16,33 +17,32 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libxml2-utils
 
       - name: Download sitemap
-        run: |
-          curl -s -o sitemap.xml https://sahill17.github.io/sitemap.xml
+        run: curl -s -o sitemap.xml https://sahill17.github.io/sitemap.xml
 
-      - name: Extract blog posts
+      - name: Extract & build Markdown links
         run: |
-          # grab every <loc> URL
-          URLS=$(xmllint --xpath "//*[local-name()='loc']/text()" sitemap.xml)
-
-          # filter to only /post/<slug> (one level under /post/), excluding the /post/ index itself
-          echo "$URLS" | tr ' ' '\n' \
-            | grep -E '^https://sahill17.github.io/post/[^/]+/?$' \
+          # Extract all <loc> entries, one per line
+          xmllint --xpath "//*[local-name()='loc']/text()" sitemap.xml \
+            | tr ' ' '\n' \
+            | grep -E '^https://sahill17\.github\.io/post/[^/]+/?$' \
             > urls.txt
 
-          echo "Filtered Blog URLs:"
-          cat urls.txt
+          # Build markdown list items from the first 5 URLs
+          LINKS=$(head -n 5 urls.txt \
+            | sed -E 's|https://sahill17\.github\.io/post/([^/]+)/?$|- [\1](https://sahill17.github.io/post/\1)|')
 
-      - name: Update README.md file
+          # Export LINKS as an environment variable for the next step
+          echo "LINKS<<EOF" >> $GITHUB_ENV
+          echo "$LINKS" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Update README.md
         run: |
           FILE="README.md"
           START="<!-- BlogPosts:START -->"
           END="<!-- BlogPosts:END -->"
 
-          # build markdown links from the first 5 URLs
-          LINKS=$(head -n 5 urls.txt \
-            | sed -E 's|https://sahill17.github.io/post/([^/]+)/?$|- [\1](https://sahill17.github.io/post/\1)|')
-
-          # replace the block between START and END
+          # Use the LINKS env var
           awk -v start="$START" -v end="$END" -v links="$LINKS" '
             $0 ~ start { print; print links; inBlock=1; next }
             $0 ~ end   { inBlock=0; print; next }
@@ -53,10 +53,11 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+
           git add README.md
-          if git diff --quiet; then
-            echo "No changes detected."
+          if git diff --cached --quiet; then
+            echo "No README changes to commit."
           else
-            git commit -m "Updated with latest blog posts"
+            git commit -m "chore: update latest blog posts"
             git push
           fi
